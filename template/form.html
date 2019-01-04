@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<center>
+		<div class="container">
+		<h1>Registration form</h1><br><br>
+		<form method="post" action="">
+			{% csrf_token %}
+			<div class="form-group">
+				{{form.name}}
+			</div>
+			<div class="form-group">
+				{{form.email}}
+			</div>
+			<div class="form-group">
+				{{form.class1}}
+			</div>
+			<div class="form-group">
+				{{form.phone}}
+			</div>
+			<div class="form-group ">
+				<label class="float-left" for="id_category_0">Category:</label>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" name="category" value="General" class="custom-control-input" required id="id_category_0">
+					<label class="custom-control-label" for="id_category_0">General</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" name="category" value="OBC" class="custom-control-input" required id="id_category_1">
+					<label class="custom-control-label" for="id_category_1">OBC</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" name="category" value="ST" class="custom-control-input" required id="id_category_2">
+					<label class="custom-control-label" for="id_category_2">ST</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" name="category" value="SC" class="custom-control-input" required id="id_category_3">
+					<label class="custom-control-label" for="id_category_3">SC</label>
+				</div>
+				
+			</div>
+			<div class="form-group">
+				{{form.address}}
+			</div>
+			
+			<button type="submit" class="btn btn-secondary btn-lg">Submit</button>
+		</form>
+		
+		</div>
+	</center>
+{% endblock %}
+
+
