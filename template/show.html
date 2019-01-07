@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-	<center><h1>Detail of Students</h1></center><br>
+	<center><h1>Detail of Students</h1><br>
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
@@ -11,6 +11,7 @@
 					<th scope="col">Phone</th>
 					<th scope="col">Category</th>
 					<th scope="col">Address</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 
@@ -23,9 +24,14 @@
 					<td>{{x.phone}}</td>
 					<td>{{x.category}}</td>
 					<td>{{x.address}}</td>
+					<td><a href="{% url 'edit' x.id %}">Edit</a>
+				<a href="{% url  'delete' x.id %}">Delete</a></td>
 				</tr>	
 				{% endfor %}
 			</tbody>
 			
-		</table>
+		</table><br><br>
+
+		<a href="{% url 'new_entry' %}" class="btn btn-primary">Add new record</a>
+		</center>
 {% endblock %}

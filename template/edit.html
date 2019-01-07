@@ -3,8 +3,8 @@
 {% block body %}
 	<center>
 		<div class="container">
-		<h1>Registration form</h1><br><br>
-		<form method="post" action="/demo/">
+		<h1>Update your details here</h1><br><br>
+		<form method="post" action="/edit/{{form.id}}">
 			{% csrf_token %}
 			<div class="form-group">
 				{{form.name}}
@@ -42,6 +42,7 @@
 			<div class="form-group">
 				{{form.address}}
 			</div>
+			
 			<button type="submit" class="btn btn-secondary btn-lg">Submit</button>
 		</form>
 		
